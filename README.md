@@ -29,9 +29,40 @@ From a Model View Controller (MVC) perspective,
 - The controller is a Java class, optionally implementing theInitializable class, which is declared as the controller for the FXML file.
 - The model consists of domain objects, defined on the Java side, that you connect to the view through the controller. 
 
-2.1. Simple Example of FXML
----------------------------
+- 2.1. Simple Example of FXML
+- ---------------------------
 
-The easiest way to show the advantages of FXML is with an example. Take a look at Figure 1-1, which shows a user interface that includes a border pane layout that has a top and center region, each of which contains a label.
+	  The easiest way to show the advantages of FXML is with an example. Take a look at Figure 1-1, which shows a user interface that includes a border pane layout that has a top and center region, each of which contains a label.
+
+	  
+	  ![alt tag](http://url/to/img.png)
+	  Figure 1-1 Border Pane Simple Example
+	  
+	  First, look at how the user interface is constructed and built directly in the source code, as shown in Example 1-1.
+	  
+	  Example 1-1 Java Code for a User Interface
+	  BorderPane border = new BorderPane();
+	  Label toppanetext = new Label("Page Title");
+	  border.setTop(toppanetext);
+	  Label centerpanetext = new Label ("Some data here");
+	  border.setCenter(centerpanetext);
+  
+Next, look at Example 1-2, which shows the same user interface, but in FXML markup. You can see the hierarchical structure of the user interface, which in turn makes it easier to add components and build upon the user interface.
+
+  Example 1-2 FXML Markup for a User Interface
+	 <BorderPane>
+		<top>
+			<Label text="Page Title"/>
+		</top>
+		<center>
+			<Label text="Some data here"/>
+		</center>
+	 </BorderPane>
+  
+
+
+  
+
+
 
 
