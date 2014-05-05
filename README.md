@@ -69,14 +69,114 @@ In addition to providing web developers a familiar approach to designing user in
 - FXML is not a compiled language; you do not need to recompile the code to see the changes. just run and see. 
 - You can use FXML with any Java Virtual Machine (JVM) language, such as Java, Scala, or Clojure.
 - FXML is not limited to the view portion of the MVC interface. You can construct services or tasks or domain objects, and you can use JavaScript or other scripting languages in FXML. For an example of using JavaScript.
-- Use a Scripting Language to Handle Events in the FXML tutorial of the Getting Started guide, go for this link : 
-  [1]: http://docs.oracle.com/javafx/2/get_started/fxml_tutorial.htm#JFXGS213
+- Use a Scripting Language to Handle Events in the FXML tutorial of the Getting Started guide, go for this link : http://docs.oracle.com/javafx/2/get_started/fxml_tutorial.htm#JFXGS213
 - The content of an FXML file can be localized as the file is read. For example, if an FXML file is loaded using the en_US locale, then it produces the string "First Name" for a label based on the following resource string:
 	<Label text="%firstName"/>
   If the locale is changed to fr_FR and the FXML file is reloaded, then the label shows "Prénom."
   The same is not true for Java code, because you must manually update the content of every element of your user interface by obtaining a reference to it and calling the appropriate setter (such as setText()).
 
 - for more : http://docs.oracle.com/javafx/2/swing/overview.htm
+
+4. Components of FXML
+=====================
+
+Here we are having a huge amount of component but we will talk about few ones as follows,
+
+- HBox : As name says Horizontal Box, so It contains all element in horizontal manner.
+	eg  : <HBox spacing="10" alignment="bottom_right" styleClass=”style.css”>
+			// content reside here in horizontal
+	      </HBox>
+
+- VBox : As name says Vertical Box, so it contains all elements in vertical manner.
+	eg  : <VBox spacing="10" alignment="bottom_right" styleClass=”style.css”>
+			// content reside here
+	      </VBox>
+- Label : For text writing purpose
+	eg	: <Label fx:id= “myWord” text=”Hello world”  />
+
+- Button :
+	eg	: <Button fx:id= “myAction” text="My Button"/>
+
+- TableView :
+	eg	: 
+	<TableView fx:id="tableView" GridPane.columnIndex="0" GridPane.rowIndex="1">
+         <columns>
+            <TableColumn text="First Name">
+            </TableColumn>
+            <TableColumn text="Last Name">
+            </TableColumn>
+            <TableColumn text="Email Address">
+            </TableColumn>
+        </columns>    
+     </TableView>
+
+- Image : For refering an image from FXML end
+	<ImageView>
+		<image>
+			<fx:reference source="myImage"/>
+		</image>
+	</ImageView>
+	
+5. FXML CSS
+===========
+
+JavaFX Cascading Style Sheets (CSS) is based on the W3C CSS version 2.1 with some additions from current work on version 3.
+
+The goal for JavaFX CSS is to allow web developers already familiar with CSS for HTML to use CSS to customize and develop themes for JavaFX controls and scene graph objects in a natural way.
+
+This enables the mixing of CSS styles for JavaFX and for other purposes (such as for HTML pages) into a single style sheet. To this end, all JavaFX property names have been prefixed with a vendor extension of "-fx-". Even properties that might seem to be compatible with standard HTML CSS have been prefixed, because JavaFX has somewhat different semantics for their values.
+
+JavaFX CSS does not support CSS layout properties such as float, position, overflow, and width. 
+However, the CSS padding and margins properties are supported on some JavaFX scene graph objects.
+
+All other aspects of layout are handled programmatically in JavaFX code. In addition, CSS support for HTML-specific elements such as Tables are not supported since there is no equivalent construct in JavaFX.
+
+eg : 
+	.button {
+		-fx-background-color: #000;
+		-fx-text-fill: #fff;
+		-fx-font-family: arial;
+		-fx-font-weight: bold;
+	}
+
+5.1. CSS Limitations :
+----------------------
+
+While the JavaFX CSS parser will parse valid CSS syntax, it is not a fully compliant CSS parser.
+
+- @-keyword statements are ignored.
+- The ":first-child" and ":lang" pseudo-classes are not supported. 
+- The ":first-line", ":first-letter", ":after", and ":before" pseudo-elements are not supported.
+- The ":active" and ":focus" dynamic pseudo-classes are not supported. However, Nodes do support the ":pressed" and ":focused" pseudo-classes, which are similar
+- The ":link" and ":visited" pseudo-classes are not supported in general. However, Hyperlink objects can be styled, and they support the ":visited" pseudo-class.
+
+- JavaFX CSS does not support comma-separated series of font family names in the -fx-font-family property. The optional line height parameter when specifying fonts is not supported. There is no equivalent for the font-variant property.
+	
+- JavaFX CSS uses the HSB color model instead of the HSL color model.
+
+-for more : http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html
+
+6. Layout of FXML
+=================
+
+As per project requirement FXML have rich number of layouts as follows,
+
+- AnchorPane
+- BorderPane
+- FlowPane
+- GridPane
+- Pane
+- Region
+- StackPane
+- TilePane
+
+Every layout have their own flow and structure, so by using above layout we can reduse our Java code logic and it also reduce application rendering time.
+
+
+
+
+
+
 
 
 
