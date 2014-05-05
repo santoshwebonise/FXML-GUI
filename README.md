@@ -182,15 +182,19 @@ As per project requirement FXML have rich number of layouts as follows,
 
 Every layout have their own flow and structure, so by using above layout we can reduce our Java code logic and it also reduce application rendering time.
 
-6. Prerequisites
+7. Prerequisites
 ================
 
 - You need to install Latest JDK(1.7 and abouve) with JavaFX support. You can download it 
 	from here : http://www.oracle.com/technetwork/java/javase/downloads/jdk7u9-downloads-1859576.html
 
 - Your favorite IDE (NetBeans or Intellij IDEA)
+
 	for NetBeans : http://www.oracle.com/technetwork/java/javase/downloads/jdk-netbeans-jsp-142931.html
+	
 	for Intellij IDEA : http://www.jetbrains.com/idea/download/
+	
+
 
 
 
