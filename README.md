@@ -32,13 +32,13 @@ From a Model View Controller (MVC) perspective,
 2.1. Simple Example of FXML
 ---------------------------
 
-	  The easiest way to show the advantages of FXML is with an example. Take a look at Figure 1-1, which shows a user interface that includes a border pane layout that has a top and center region, each of which contains a label.
+  The easiest way to show the advantages of FXML is with an example. Take a look at Figure 1-1, which shows a user interface that includes a border pane layout that has a top and center region, each of which contains a label.
 
-	  
-	  ![alt tag](https://github.com/santoshwebonise/FXML-GUI/blob/master/images/borderpane_simple_example.png)
-	  Figure 1-1 Border Pane Simple Example
-	  
-	  First, look at how the user interface is constructed and built directly in the source code, as shown in Example 1-1.
+  
+  ![alt tag](https://raw.githubusercontent.com/santoshwebonise/FXML-GUI/master/images/borderpane_simple_example.png)
+  Figure 1-1 Border Pane Simple Example
+  
+  First, look at how the user interface is constructed and built directly in the source code, as shown in Example 1-1.
 	  
 	  Example 1-1 Java Code for a User Interface
 	  
