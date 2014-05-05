@@ -59,6 +59,28 @@ Next, look at Example 1-2, which shows the same user interface, but in FXML mark
 			<Label text="Some data here"/>
 		</center>
 	 </BorderPane>
+	 
+3. Benefits of FXML
+===================
+
+In addition to providing web developers a familiar approach to designing user interfaces, FXML offers these benefits:
+
+- Because the scene graph is more transparent in FXML, it is easy for a development team to create and maintain a testable user interface.
+- FXML is not a compiled language; you do not need to recompile the code to see the changes. just run and see. 
+- You can use FXML with any Java Virtual Machine (JVM) language, such as Java, Scala, or Clojure.
+- FXML is not limited to the view portion of the MVC interface. You can construct services or tasks or domain objects, and you can use JavaScript or other scripting languages in FXML. For an example of using JavaScript.
+- Use a Scripting Language to Handle Events in the FXML tutorial of the Getting Started guide, go for this link : 
+  [1]: http://docs.oracle.com/javafx/2/get_started/fxml_tutorial.htm#JFXGS213
+- The content of an FXML file can be localized as the file is read. For example, if an FXML file is loaded using the en_US locale, then it produces the string "First Name" for a label based on the following resource string:
+	<Label text="%firstName"/>
+  If the locale is changed to fr_FR and the FXML file is reloaded, then the label shows "Prénom."
+  The same is not true for Java code, because you must manually update the content of every element of your user interface by obtaining a reference to it and calling the appropriate setter (such as setText()).
+
+- for more : http://docs.oracle.com/javafx/2/swing/overview.htm
+
+
+
+
   
 
 
