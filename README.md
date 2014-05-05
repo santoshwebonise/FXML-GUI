@@ -83,22 +83,29 @@ In addition to providing web developers a familiar approach to designing user in
 Here we are having a huge amount of component but we will talk about few ones as follows,
 
 - HBox : As name says Horizontal Box, so It contains all element in horizontal manner.
+		
 		eg  : <HBox spacing="10" alignment="bottom_right" styleClass=”style.css”>
 				// content reside here in horizontal
 			  </HBox>
 
 - VBox : As name says Vertical Box, so it contains all elements in vertical manner.
+		
 		eg  : <VBox spacing="10" alignment="bottom_right" styleClass=”style.css”>
 				// content reside here
 			  </VBox>
 - Label : For text writing purpose
+		
 		eg	: <Label fx:id= “myWord” text=”Hello world”  />
 
 - Button :
-		eg	: <Button fx:id= “myAction” text="My Button"/>
+		
+		eg	: 
+			<Button fx:id= “myAction” text="My Button"/>
 
 - TableView :
+		
 		eg	: 
+		
 		<TableView fx:id="tableView" GridPane.columnIndex="0" GridPane.rowIndex="1">
 			 <columns>
 				<TableColumn text="First Name">
@@ -111,6 +118,7 @@ Here we are having a huge amount of component but we will talk about few ones as
 		 </TableView>
 
 - Image : For refering an image from FXML end
+		
 		<ImageView>
 			<image>
 				<fx:reference source="myImage"/>
