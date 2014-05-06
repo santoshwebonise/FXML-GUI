@@ -194,13 +194,15 @@ Every layout have their own flow and structure, so by using above layout we can 
 	
 	for Intellij IDEA : http://www.jetbrains.com/idea/download/
 	
-- 8. Example : User Interface using FXML
-========================================
+8. Example: User Interface using FXML
+======================================
 
 Here, you use FXML to create the same login user interface, separating the application design from the application logic, thereby making the code easier to maintain. The login user interface you build in this tutorial is shown in Figure 4-1.
 
 Figure 4-1 Login User Interface
+
 ![alt tag](https://raw.githubusercontent.com/santoshwebonise/FXML-GUI/master/images/login_fxml.png)
+
 uses NetBeans IDE. Ensure that the version of NetBeans IDE that you are using supports JavaFX 
 
 - Set Up the Project
@@ -212,6 +214,7 @@ Your first task is to set up a JavaFX FXML project in NetBeans IDE:
 - 2. In the JavaFX application category, choose JavaFX FXML Application. Click Next.
 - 3. Name the project FXMLExample and click Finish.
 - 4. NetBeans IDE opens an FXML project that includes the code for a basic Hello World application. The application includes three files:
+	
 	a. FXMLExample.java. This file takes care of the standard Java code required for an FXML application.
 
 	b. Sample.fxml. This is the FXML source file in which you define the user interface.
@@ -219,10 +222,12 @@ Your first task is to set up a JavaFX FXML project in NetBeans IDE:
 	c. SampleController.java. This is the controller file for handling the mouse and keyboard input.
 
 - 5. Rename SampleController.java to FXMLExampleController.java so that the name is more meaningful for this application.
+	
 	a. In the Projects window, right-click SampleController.java and choose Refactor then Rename.
 	b. Enter FXMLExampleController, and click Refactor.
 
 - 6. Rename Sample.fxml to fxml_example.fxml.
+	
 	a. Right-click Sample.fxml and choose Rename.
 	b. Enter fxml_example and click OK.
 
@@ -314,7 +319,8 @@ The next lines create a Label object with text User Name at column 0, row 1 and 
 When working with a grid layout, you can display the grid lines, which is useful for debugging purposes. In this case, set the gridLinesVisible property to true by adding the statement<gridLinesVisible>true</gridLinesVisible> right after the <padding></padding> statement. Then, when you run the application, you see the lines for the grid columns and rows as well as the gap properties, as shown in Figure 4-2.
 
 Figure 4-2 Login Form with Grid Lines
-![alt tag](https://github.com/santoshwebonise/FXML-GUI/blob/master/images/login_fxml_gridlines.png)
+
+![alt tag](https://raw.githubusercontent.com/santoshwebonise/FXML-GUI/master/images/login_fxml_gridlines.png)
 
 - Add a Button and Text
 -----------------------
@@ -338,9 +344,53 @@ The HBox pane has one child, a Button with text property set to Sign in and an o
 
 Assigning an fx:id value to an element, as shown in the code for the Text control, creates a variable in the document's namespace, which you can refer to from elsewhere in the code. While not required, defining a controller field helps clarify how the controller and markup are associated.
 
+- Add Code to Handle an Event
+-----------------------------
 
+Now make the Text control display a message when the user presses the button. You do this in the FXMLExampleController.java file. Delete the code that NetBeans IDE generated and replace it with the code in Example 4-6.
 
+Example 4-6 FXMLExampleController.java
+
+	package fxmlexample;
+ 
+	import javafx.event.ActionEvent;
+	import javafx.fxml.FXML;
+	import javafx.scene.text.Text;
+	 
+	public class FXMLExampleController {
+		@FXML private Text actiontarget;
+		
+		@FXML protected void handleSubmitButtonAction(ActionEvent event) {
+			actiontarget.setText("Sign in button pressed");
+		}
+
+	}
 	
+The @FXML annotation is used to tag nonpublic controller member fields and handler methods for use by FXML markup. The handleSubmtButtonAction method sets the actiontarget variable to Sign in button pressed when the user presses the button.
+
+You can run the application now to see the complete user interface. Figure 4-3 shows the results when you type text in the two fields and click the Sign in button. If you have any problems, then you can compare your code against the FXMLLogin example.
+
+Figure 4-3 FXML Login Window
+
+![alt tag] (https://raw.githubusercontent.com/santoshwebonise/FXML-GUI/master/images/login_fxml_before_css.png)
+
+- Style the Application with CSS
+--------------------------------
+
+The final task is to make the login application look attractive by adding a Cascading Style Sheet (CSS).
+
+1. Create a style sheet.
+	
+	a. In the Project window, right-click the login folder under Source Packages and choose New, then Other.
+	b. In the New File dialog box, choose Other, then Cascading Style Sheet and clickNext.
+	c. Enter Login and click Finish.
+	d. Copy the contents of the Login.css file attached to this document into your CSS file. For a description of the classes in the CSS file, see Fancy Forms with JavaFX CSS.
+
+2. Download the gray, linen-like image for the background in the background.jpg file and add it to the fxmlexample folder.
+
+3. Open the fxml_example.fxml file and add a stylesheets element before the end of the markup for the GridPane layout as shown in Example 4-8.
+
+
 
 
 
