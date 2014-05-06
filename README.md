@@ -213,23 +213,25 @@ Your first task is to set up a JavaFX FXML project in NetBeans IDE:
 - 1. From the File menu, choose New Project.
 - 2. In the JavaFX application category, choose JavaFX FXML Application. Click Next.
 - 3. Name the project FXMLExample and click Finish.
+
 - 4. NetBeans IDE opens an FXML project that includes the code for a basic Hello World application. The application includes three files:
 	
-	a. FXMLExample.java. This file takes care of the standard Java code required for an FXML application.
+		a. FXMLExample.java. This file takes care of the standard Java code required for an FXML application.
 
-	b. Sample.fxml. This is the FXML source file in which you define the user interface.
-	
-	c. SampleController.java. This is the controller file for handling the mouse and keyboard input.
+		b. Sample.fxml. This is the FXML source file in which you define the user interface.
+
+		c. SampleController.java. This is the controller file for handling the mouse and keyboard input.
 
 - 5. Rename SampleController.java to FXMLExampleController.java so that the name is more meaningful for this application.
 	
-	a. In the Projects window, right-click SampleController.java and choose Refactor then Rename.
-	b. Enter FXMLExampleController, and click Refactor.
+		a. In the Projects window, right-click SampleController.java and choose Refactor then Rename.
+		
+		b. Enter FXMLExampleController, and click Refactor.
 
 - 6. Rename Sample.fxml to fxml_example.fxml.
 	
-	a. Right-click Sample.fxml and choose Rename.
-	b. Enter fxml_example and click OK.
+		a. Right-click Sample.fxml and choose Rename.
+		b. Enter fxml_example and click OK.
 
 - Load the FXML Source File
 ---------------------------
@@ -382,17 +384,77 @@ The final task is to make the login application look attractive by adding a Casc
 1. Create a style sheet.
 	
 	a. In the Project window, right-click the login folder under Source Packages and choose New, then Other.
+	
 	b. In the New File dialog box, choose Other, then Cascading Style Sheet and clickNext.
+	
 	c. Enter Login and click Finish.
+	
 	d. Copy the contents of the Login.css file attached to this document into your CSS file. For a description of the classes in the CSS file, see Fancy Forms with JavaFX CSS.
 
 2. Download the gray, linen-like image for the background in the background.jpg file and add it to the fxmlexample folder.
 
 3. Open the fxml_example.fxml file and add a stylesheets element before the end of the markup for the GridPane layout as shown in Example 4-8.
 
+	Example 4-8 Style Sheet
+		
+		<GridPane>
+			<stylesheets>
+				<URL value="@Login.css" />
+			</stylesheets>
 
+		</GridPane>
+	
+	The @ symbol before the name of the style sheet in the URL indicates that the style sheet is in the same directory as the FXML file.
 
+4. To use the root style for the grid pane, add a style class to the markup for the GridPane layout as shown in Example 4-9.
+	
+		Example 4-9 Style the GridPane
+		
+			<GridPane fx:controller="fxmlexample.FXMLExampleController" 
+			xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10" 
+			styleClass="root">
 
+5. Create a welcome-text ID for the Welcome Text object so it uses the style #welcome-text defined in the CSS file, as shown in Example 4-10.
+
+	Example 4-10 Text ID
+		
+			<Text id="welcome-text" text="Welcome" 
+			GridPane.columnIndex="0" GridPane.rowIndex="0" 
+			GridPane.columnSpan="2"/>
+
+6. Run the application. Figure 4-5 shows the stylized application.
+
+	Figure 4-5 Stylized Login Application
+	
+	![alt tag] (https://raw.githubusercontent.com/santoshwebonise/FXML-GUI/master/images/login_fxml_css.png)
+
+For information about how to run your application outside NetBeans IDE, see Deploying Your First JavaFX Application.
+
+9. FXML and Scene Builder
+=========================
+
+You can also try out the JavaFX Scene Builder tool by opening the fxml_example.fxml file in Scene Builder and making modifications. 
+
+This tool provides a visual layout environment for designing the UI for JavaFX applications and automatically generates the FXML code for the layout. 
+
+The Skinning with CSS and CSS Analyzersection of the JavaFX Scene Builder User Guide also give you information on how you can skin your FXML layout.
+
+See Getting Started with JavaFX Scene Builder for more information on this tool.
+
+for more : http://docs.oracle.com/javafx/scenebuilder/1/get_started/jsbpub-get_started.htm
+
+download Scene Builder  for MAC/windows: http://www.oracle.com/technetwork/java/javafx/downloads/devpreview-1429449.html
+
+10. 9. Resources 
+================
+
+[1] : http://docs.oracle.com/javafx/2/fxml_get_started/why_use_fxml.htm
+
+[2] : http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html
+
+[3] : http://docs.oracle.com/javafx/2/get_started/fxml_tutorial.htm
+
+[4] : http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html
 
 
 
